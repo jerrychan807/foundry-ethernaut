@@ -12,9 +12,10 @@ contract Elevator {
     function goTo(uint256 _floor) public {
         Building building = Building(msg.sender);
 
-        if (!building.isLastFloor(_floor)) {
-            floor = _floor;
-            top = building.isLastFloor(floor);
+        if (!building.isLastFloor(_floor)) { // 是否是最高层
+            // 不是最高层
+            floor = _floor; //
+            top = building.isLastFloor(floor); // 也不是最高层
         }
     }
 }

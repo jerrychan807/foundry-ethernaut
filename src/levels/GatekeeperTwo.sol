@@ -23,7 +23,8 @@ contract GatekeeperTwo {
         _;
     }
 
-    function enter(bytes8 _gateKey) public gateOne gateTwo gateThree(_gateKey) returns (bool) {
+    // gateThree(_gateKey)
+    function enter(bytes8 _gateKey) public gateOne gateTwo  returns (bool) {
         entrant = tx.origin;
         return true;
     }

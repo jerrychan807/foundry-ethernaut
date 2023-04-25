@@ -16,6 +16,7 @@ contract Token {
         return true;
     }
 
+    // 查询余额
     function balanceOf(address _owner) public view returns (uint256 balance) {
         return balances[_owner];
     }

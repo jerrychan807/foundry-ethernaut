@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/math/SafeMath.sol";
 
 contract CoinFlip {
     using SafeMath for uint256;
-    uint256 public consecutiveWins;
+    uint256 public consecutiveWins; // 连续胜利的次数
     uint256 lastHash;
     uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
 
@@ -14,7 +14,8 @@ contract CoinFlip {
     }
 
     function flip(bool _guess) public returns (bool) {
-        uint256 blockValue = uint256(blockhash(block.number.sub(1)));
+        // blockhash:指定区块的区块哈希
+        uint256 blockValue = uint256(blockhash(block.number.sub(1))); // 上一个区块的哈希
 
         if (lastHash == blockValue) {
             revert();
